@@ -102,6 +102,12 @@ public class BasicController {
         return "basic/iter";
     }
 
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
 
     public void addUsers(Model model) {
         List<User> list = new ArrayList<>();
