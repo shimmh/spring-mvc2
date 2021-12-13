@@ -96,7 +96,21 @@ public class BasicController {
         return "basic/attribute";
     }
 
+    @GetMapping("/iter")
+    public String iter(Model model) {
+        addUsers(model);
+        return "basic/iter";
+    }
 
+
+    public void addUsers(Model model) {
+        List<User> list = new ArrayList<>();
+        list.add(new User("userA", 10));
+        list.add(new User("userB", 20));
+        list.add(new User("userC", 30));
+
+        model.addAttribute("users", list);
+    }
 
     @Data
     static class User {
